@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/carousel/carousel.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/carousel/carousel.thumbs.css"
+    />
+    <style>
+      @media screen and (min-width: 300px) {
+        #myCarousel {
+          max-width: 640px;
+        }
+      }
+      .f-carousel {
+        max-width: 640px;
+        margin: 0 auto;
+      }
+
+      .f-carousel__slide {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .f-carousel__slide img {
+        max-width: 100%; /* 图片宽度最大为容器宽度 */
+        height: auto; /* 图片高度自动调整 */
+      }
+
+      #myCarousel3 {
+
+        width: 45%;
+        margin: 0 auto;
+      }
+
+      #myCarousel3 .f-carousel__slide {
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      #myCarousel4 {
+
+        width: 45%;
+        margin: 0 auto;
+      }
+
+      #myCarousel4 .f-carousel__slide {
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      #containerparal {
+        display: flex;
+      }
+      #containerparal0 {
+        width: 100%;
+        display: flex;
+      }
+
+      #text1, #text2 {
+        flex: 1;
+      }
+      .f-carousel0 {
+        display: flex; /* 使用 flex 布局使图片并排显示 */
+        max-width: 640px;
+        margin: 0 auto; 
+      }
+      .f-carousel {
+        --f-button-width: 38px;
+        --f-button-height: 38px;
+
+        --f-button-svg-width: 16px;
+        --f-button-svg-height: 16px;
+        --f-button-svg-stroke-width: 2.5;
+
+        --f-button-color: rgb(71 85 105);
+        --f-button-border-radius: 50%;
+        --f-button-shadow: 0 6px 12px -2px rgb(50 50 93 / 25%), 0 3px 7px -3px rgb(0 0
+                0 / 30%);
+
+        --f-button-bg: #fff;
+        --f-button-hover-bg: #f9f9f9;
+        --f-button-active-bg: #f0f0f0;
+      }
+
+      @media screen and (max-width: 640px) {
+
+        .f-carousel__slide {
+          flex-direction: column;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- *************************** research 1 *********************** -->
+
+    <div>
+      <div class="f-carousel" id="myCarousel">
+        <div
+          class="f-carousel__slide"
+        >
+          <img
+            width="640"
+            height="480"
+            alt=""
+            data-lazy-src="https://sumingqiu.files.wordpress.com/2022/11/cty.jpg"
+          />
+        </div>
+        <div
+          class="f-carousel__slide"
+        >
+          <img
+            width="640"
+            height="480"
+            alt=""
+            data-lazy-src="https://sumingqiu.files.wordpress.com/2022/11/seg.jpg?w=750"
+          />
+        </div>
+        <div
+          class="f-carousel__slide"
+          data-thumb-src=""
+        >
+          <img
+            width="640"
+            height="480"
+            alt=""
+            data-lazy-src="https://sumingqiu.files.wordpress.com/2022/11/rrt.png?w=750"
+          />
+        </div>
+        <div
+          class="f-carousel__slide"
+          data-thumb-src=""
+        >
+          <img
+            width="640"
+            height="480"
+            alt=""
+            data-lazy-src="https://sumingqiu.files.wordpress.com/2022/11/rrt_fig2-1.jpg"
+          />
+        </div>
+
+        
+      </div>
+    </div>
+    <ul style="font-size: 17px;">
+      To simulate the real-world drone tracking and path planning process, 
+      I use air-sim together with Unreal Engine to simulate the car tracking process. 
+      Firstly, we built a true-to-real-world environment in Unreal Engine (UE4), as shown in the first picture, 
+      which reduced the cost to do the real physical experiments. Then I implement a deep-learning-based depth-map 
+      algorithm (Monodepth2) and segmentation algorithm(Detectron2) in the virtual environment. These two methods will 
+      generate the 3D occlusion identification and map it into the Unreal Engine virtual environment. Furthermore, 
+      we used RRT algorithms for the 2d path planning (Fig 2). We set the starting point (X) and a target point (O). 
+      The red line is the optimal path and the green line is all possible paths (Fig 3). After getting the optimal path 
+      from above, we change the path into spline in UE4. The planned path in Fig 3 is executed by the virtual agent in 
+      Fig 4. In the last step, we designed a spline-based autonomous moving method for agents using a blueprint 
+      that also could record real-time position data in TXT format. The recorded position data will be used for 
+      the drone to track. This technology can be used for future autonomous driving as drones can assist the car in 
+      driving and path planning.
+    </ul>
+<br>
+<br>
+<br>
+<br>
+    <!-- *************************** research 2 *********************** -->
+
+  
+    <div>
+      <div class="f-carousel" id="myCarousel2">
+        <div
+          class="f-carousel__slide"
+        >
+          <img
+            width="640"
+            height="480"
+            alt=""
+            data-lazy-src="https://sumingqiu.files.wordpress.com/2022/11/human_collab8.jpg"
+          />
+        </div>
+        <div
+          class="f-carousel__slide"
+        >
+          <img
+            width="640"
+            height="480"
+            alt=""
+            data-lazy-src="https://sumingqiu.files.wordpress.com/2022/11/human_collab6-1.jpg"
+          />
+        </div>
+        <div
+          class="f-carousel__slide"
+          data-thumb-src=""
+        >
+          <img
+            width="640"
+            height="480"
+            alt=""
+            data-lazy-src="https://sumingqiu.files.wordpress.com/2022/11/human_collab3.jpg?w=750"
+          />
+        </div>
+        <div
+          class="f-carousel__slide"
+          data-thumb-src=""
+        >
+          <img
+            width="640"
+            height="480"
+            alt=""
+            data-lazy-src="https://sumingqiu.files.wordpress.com/2022/11/human_collab5.png?w=750"
+          />
+        </div>
+        <div
+          class="f-carousel__slide"
+          data-thumb-src=""
+        >
+          <img
+            width="640"
+            height="480"
+            alt=""
+            data-lazy-src="https://sumingqiu.files.wordpress.com/2022/11/human_collab2.jpg"
+          />
+        </div>
+
+        
+      </div>
+    </div>
+    <ul style="font-size: 17px;">
+      First of all, I use YOLO for target detection (Fig 1). The target data will be stored in the database first. 
+      I predefined multiple positions of virtual human targets as shown in Fig 2. I also put several fixed-camera 
+      in the environment which provides views for human operators. When drones find the target, they will track the 
+      target (Fig 3 – 4) using a Neural Network based trajectory prediction algorithm. When drones lost targets due 
+      to bad weather or obstacles (Fig 5), the drone can receive messages from the human operator (Fig 6) through the 
+      fixed-camera windows, which assists the path planning for the drone. Drones will update the path based on the 
+      click position. I also designed a fog system in the environment which means we can simulate the drone’s tracking 
+      ability in different densities of fog.
+    </ul>
+
+    <!-- *************************** research 3 *********************** -->
+    
+    <div id = "containerparal0">
+      
+      <div class="f-carousel0" id="myCarousel3">
+        <div
+          class="f-carousel__slide"
+        >
+          <img
+            width="640"
+            height="480"
+            alt=""
+            data-lazy-src="https://sumingqiu.files.wordpress.com/2021/11/e7ae97e6b395e7949fe68890e79a84e69588e69e9ce59bbe2.png"
+          />
+        </div>
+        <div
+          class="f-carousel__slide"
+        >
+          <img
+            width="640"
+            height="480"
+            alt=""
+            data-lazy-src="https://sumingqiu.files.wordpress.com/2021/11/volume.png"
+          />
+        </div>
+        <div
+          class="f-carousel__slide"
+          data-thumb-src=""
+        >
+          <img
+            width="640"
+            height="480"
+            alt=""
+            data-lazy-src="https://sumingqiu.files.wordpress.com/2021/11/volume4.png"
+          />
+        </div>
+        <div
+          class="f-carousel__slide"
+          data-thumb-src=""
+        >
+          <img
+            width="640"
+            height="480"
+            alt=""
+            data-lazy-src="https://sumingqiu.files.wordpress.com/2021/11/volume2.png"
+          />
+        </div>
+        <div
+          class="f-carousel__slide"
+          data-thumb-src=""
+        >
+          <img
+            width="640"
+            height="480"
+            alt=""
+            data-lazy-src="https://sumingqiu.files.wordpress.com/2021/11/volume3.png"
+          />
+        </div>
+        <div
+          class="f-carousel__slide"
+          data-thumb-src=""
+        >
+          <img
+            width="640"
+            height="480"
+            alt=""
+            data-lazy-src="https://sumingqiu.files.wordpress.com/2021/11/e9939ce689abe68f8f.png"
+          />
+        </div>
+
+        
+      </div>
+      
+      
+
+        <div class="f-carousel0" id="myCarousel4">
+          <div
+            class="f-carousel__slide"
+          >
+            <img
+              width="640"
+              height="480"
+              alt=""
+              data-lazy-src="https://sumingqiu.files.wordpress.com/2021/11/e7ae97e6b395e7949fe68890e79a84e69588e69e9ce59bbe2.png"
+            />
+          </div>
+          <div
+            class="f-carousel__slide"
+          >
+            <img
+              width="640"
+              height="480"
+              alt=""
+              data-lazy-src="https://sumingqiu.files.wordpress.com/2021/11/volume.png"
+            />
+          </div>
+          <div
+            class="f-carousel__slide"
+            data-thumb-src=""
+          >
+            <img
+              width="640"
+              height="480"
+              alt=""
+              data-lazy-src="https://sumingqiu.files.wordpress.com/2021/11/volume4.png"
+            />
+          </div>
+          <div
+            class="f-carousel__slide"
+            data-thumb-src=""
+          >
+            <img
+              width="640"
+              height="480"
+              alt=""
+              data-lazy-src="https://sumingqiu.files.wordpress.com/2021/11/volume2.png"
+            />
+          </div>
+          <div
+            class="f-carousel__slide"
+            data-thumb-src=""
+          >
+            <img
+              width="640"
+              height="480"
+              alt=""
+              data-lazy-src="https://sumingqiu.files.wordpress.com/2021/11/volume3.png"
+            />
+          </div>
+          <div
+            class="f-carousel__slide"
+            data-thumb-src=""
+          >
+            <img
+              width="640"
+              height="480"
+              alt=""
+              data-lazy-src="https://sumingqiu.files.wordpress.com/2021/11/e9939ce689abe68f8f.png"
+            />
+          </div>
+          
+        </div>
+    </div>
+
+    <div id="containerparal">
+
+      <ul style="font-size: 17px;" id="text1">
+        The core problem of metal contact was to calculate the contact area accurately. 
+        Traditionally, researchers tend to use fractal theories, while the applications are limited in 
+        some cases. Inspired by holes in sponges, I used the concept of porosity to develop a universal methodology. 
+        The big picture was to divide the volume of the metal by the height of the refactored surface.  
+        With the reconstructed surface, I wrote a program to iterate the height of the cylinder mentioned above recursively. 
+        Consequently, the real contact area can be calculated. Luckily, my supervisor, Professor Wurui Ta, got contact with Dr. 
+        BNJ Persson – who raised Persson’s contact theory, which becomes one of the most important theories in contact mechanics – to evaluate 
+        the model I developed. Combining with Persson’s method, we also propose a new resistance calculating method which could be used to 
+        determine superconducting cables’ resistance quicker and cheaper. The simulation results show better accuracy and speed than any existing 
+        method. This research was published in Tribology International
+      </ul>
+
+      <ul style="font-size: 17px;" id="text2">
+        In nature, the sand storm will be very hard to simulate. My undergraduate school is near the desert which suffers from 
+        sand storms from time to time. My dean, Professor Zhou, and his wife, Professor Zheng, devoted all their lives to studying the sandstorm 
+        movement and its control. I respect their work and extended the application scope of the spherical sand movement model developed by 
+        Professor Zheng to ellipsoid. I began by assuming the sand particles as all spherical and calculated the trajectory accordingly using 
+        the Fourth Order Runge-Kuta algorithm. I then utilized the Monte Carlo algorithm to expand the ideal spheres to a more general case – ellipses – taking 
+        Magnus force into consideration. After numerous tests, one of the conclusions raised my attention: under a certain geometrical condition, the moving 
+        trajectory of ellipsoidal and spherical shapes are nearly identical. Ideally, this finding can reduce the calculation by 67% and provide potential 
+        development for other sandstorm movement models.
+      </ul>
+
+    </div>
+
+<!-- *************************** Style *********************** -->
+
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/carousel/carousel.umd.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/carousel/carousel.thumbs.umd.js"></script>
+    <script>
+      const container = document.getElementById("myCarousel");
+      const options = { Dots: true };
+
+      new Carousel(container, options, { Thumbs });
+
+      const container2 = document.getElementById("myCarousel2");
+      const options2 = { Dots: true };
+
+      new Carousel(container2, options2, { Thumbs });
+
+      const container3 = document.getElementById("myCarousel3");
+      const options3 = { Dots: true };
+
+      new Carousel(container3, options3, { Thumbs });
+
+      const container4 = document.getElementById("myCarousel4");
+      const options4 = { Dots: true };
+
+      new Carousel(container4, options4, { Thumbs });
+    </script>
+  </body>
+</html>
